@@ -321,8 +321,8 @@ Start narrowly:
   retired names, prohibited ambiguous domain terms, or a required form with one safe
   correction.
 - **Warnings:** use for strong conventions that still need human interpretation.
-- **Suggestions:** use for possible reader harms such as “easy”, “obvious”, vague
-  pronouns, unexplained abbreviations, or long sentences. Do not auto-fix these.
+- **Suggestions:** use sparingly for possible reader harms such as “easy” or “obvious”.
+  Do not auto-fix these.
 - Configure markup scopes so code, equations, identifiers, citations, generated pages,
   and machine-managed content are not rewritten as prose.
 - Lint changed source files in pull requests and run a scheduled whole-tree check. This
@@ -336,6 +336,10 @@ Run a non-blocking pilot first and collect false positives. Promote only stable,
 objective rules to blocking errors. Vale output remains supporting evidence for an
 agent or human review; it cannot determine whether a scientific qualification is true,
 a tutorial teaches effectively, or a page answers the intended need.
+
+Do not create lexical rules for general status terms or relative references. Whether
+“production”, “recommended”, “this”, “matched”, or “below” is justified depends on
+public authority, local context, and placement that Vale cannot infer.
 
 ### Combined workflow
 

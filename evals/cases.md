@@ -62,3 +62,30 @@ Required outcomes:
   review;
 - explains the smallest policy decision and migration scope needed before editing; and
 - leaves the fixture unchanged.
+
+## Built-in runner context and placement regression
+
+Fixture: [`builtin-runner-project`](fixtures/builtin-runner-project)
+
+Prompts:
+
+- [assessment](prompts/builtin-runner-assessment.md);
+- [authoring](prompts/builtin-runner-authoring.md);
+- [impact review](prompts/builtin-runner-impact.md); and
+- [docstring review](prompts/builtin-runner-docstrings.md).
+
+The evaluator receives the selected prompt and fixture, not these expected outcomes.
+Across the four skill scopes, the evaluations should:
+
+- identify that the sampled-timescale comparison and “matched” relationship are not
+  introduced for the reader;
+- distinguish a supported public export and architectural production recipe from a
+  recommended or adopted operational workflow;
+- reject “fallback” unless repository evidence establishes fallback behaviour;
+- recognise that a built-in runner does not fulfil the customisation page's promise and
+  choose a canonical usage home with a short link from the related page;
+- make the public docstring describe observable behaviour in its normal API-reference
+  context, without demanding a tutorial or duplicated type information;
+- preserve the legitimate “production emissions” use and the explicitly supported
+  standard workflow; and
+- keep docstring and broader page work in their respective skill scopes.

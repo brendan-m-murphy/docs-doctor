@@ -57,6 +57,19 @@ tests, examples, and adjacent user documentation. Check only applicable items:
 Do not demand every item from every docstring. Require the information a caller or
 maintainer needs to use or change that object safely.
 
+Read public docstrings in their normal generated-reference context: the symbol name,
+signature, annotations, containing class or module, and explicit links are available.
+The docstring need not repeat types, project introductions, tutorials, or every concept
+needed by a newcomer. It must still make its purpose, observable behaviour, important
+conditions, and locally used comparisons intelligible without private design or pull-
+request context.
+
+Verify status qualifiers against public repository authority and state the relevant
+dimension, such as supported API, built-in implementation, recommended workflow,
+operational adoption, compatibility, or experimental maturity. Prefer observable
+behaviour over unexplained labels. Hand off any background or workflow that cannot stay
+concise to authored documentation and link it when useful.
+
 ## Avoid duplication and misplaced content
 
 - Follow local policy on whether annotations or prose own type information; absent a

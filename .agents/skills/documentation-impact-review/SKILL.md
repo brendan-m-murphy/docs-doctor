@@ -41,7 +41,20 @@ Check whether the change alters any of these reader-visible contracts:
   explanation, release notes, and migration guidance.
 
 Search the documentation by concept and user vocabulary as well as exact identifier.
-Inspect navigation and cross-links when a page is added, removed, or renamed.
+Inspect navigation and cross-links when a page or substantial section is added, moved,
+removed, renamed, or changes purpose.
+
+For materially changed prose, perform a cold-reader check using only the rendered page,
+its public links, and repository evidence. Issue and pull-request context may help the
+review but is not knowledge the reader can be assumed to have. Require introduced
+comparisons, clear local referents, and public evidence for status qualifiers. Distinguish
+API support and built-in availability from recommendation, operational adoption,
+compatibility, and experimental maturity.
+
+Check whether each substantial addition fulfils the page title and introductory
+promise, matches likely search intent, has the right canonical home, fits neighbouring
+content at the same level of abstraction, and does not imply unsupported maturity by
+its location. Apply this check even when content is inserted into an existing page.
 
 For changed Python docstrings or a Python-object-only request, produce an explicit
 handoff to `python-docstring-review`; do not duplicate its object-level review here.

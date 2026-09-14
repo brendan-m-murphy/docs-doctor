@@ -55,6 +55,20 @@ Then assess reader experience:
 - cognitive load, terminology, and plain, precise language;
 - Diátaxis coherence without demanding four directories or four pages.
 
+For substantial or suspicious sections, perform a cold-reader check using only the
+current page, its public links, and repository evidence. Do not supply missing context
+from an issue, pull request, private prototype, or the author's apparent train of
+thought. Check whether comparisons and alternatives have been introduced, status terms
+have a public authority and a clear dimension, and references such as “matched” or
+“below” have an unmistakable local referent. Status dimensions may include API support,
+built-in availability, recommendation, operational adoption, compatibility, or
+experimental maturity; do not collapse them into one label.
+
+When content seems merely related to its page, test its placement against the page title
+and introduction, likely search intent, canonical home, neighbouring level of
+abstraction, and support status implied by the location. Apply this proportionately;
+do not turn a broad audit into a sentence-by-sentence inventory.
+
 Judge each item by its user consequence, not by stylistic preference. Do not turn
 readability scores, passive-voice warnings, or a Diátaxis classification into a quality
 score. Preserve exact names, equations, qualifications, and uncertainty. Flag claims

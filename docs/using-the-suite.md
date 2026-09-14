@@ -15,6 +15,22 @@ impact review can identify a stale public docstring and a missing migration guid
 docstring review remains object-scoped; the authoring task receives the bounded guide
 request. Skills do not silently invoke one another or broaden permissions.
 
+## Review context and placement
+
+For new sections and changed comparisons or status claims, review the text using the
+page, its public links, and repository evidence. Do not assume that readers know the
+issue, pull request, prototype, or author discussion. Distinguish supported API,
+built-in availability, recommendation, operational adoption, compatibility, and
+experimental maturity when those statuses differ.
+
+Related content is not automatically well placed. Check it against the page title and
+introduction, likely search intent, canonical home, neighbouring level of abstraction,
+and maturity implied by the location. A related page can link to the canonical home.
+
+A public docstring has a smaller context: readers can see its symbol, signature,
+annotations, containing class or module, and explicit links. It should be intelligible
+there, but it need not repeat a tutorial, project introduction, or annotated types.
+
 ## Add the suite to a repository
 
 Use the preview-first [repository bootstrap](installing.md) to install all or selected
@@ -28,6 +44,7 @@ should identify:
 - documentation roots, formats, navigation, and build commands;
 - priority audiences and supported versions;
 - sources of truth for API, CLI, configuration, data, and scientific claims;
+- canonical homes plus authoritative support and maturity terminology;
 - terminology, locale, docstring dialect, and public-export rules;
 - units, dimensions, coordinates, metadata, and domain-review requirements;
 - generated versus authored files; and

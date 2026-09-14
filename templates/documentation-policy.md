@@ -13,6 +13,7 @@
 - Source roots and formats: [paths and Markdown, reStructuredText, or notebooks]
 - Navigation entry points: [files]
 - Authored and generated boundaries: [what is generated and where]
+- Canonical homes and linking policy: [where procedures, explanations, and reference live]
 - Local preview and strict build commands: [commands]
 
 Diátaxis modes describe reader needs; they do not require four directories.
@@ -22,6 +23,7 @@ Diátaxis modes describe reader needs; they do not require four directories.
 - Python API and public exports: [source]
 - Command-line interface and configuration: [source]
 - Supported environments and versions: [source]
+- Support and maturity vocabulary: [terms, meanings, and authoritative source]
 - Scientific or numerical claims: [source and required reviewer]
 - Design rationale: [accepted decision records]
 
@@ -39,6 +41,7 @@ Preserve exact identifiers, equations, units, qualifications, and uncertainty.
 - Public-object rule: [how public status is determined and what must be documented]
 - Modules, packages, constructors, inherited methods, and exceptions: [decisions]
 - Scientific contracts: [units, shapes, dimensions, coordinates, metadata, and limits]
+- API-reference context: [what readers can assume from signatures, annotations, and links]
 - Ruff checks: [configured rules and command]
 
 ## Prose checks
@@ -49,6 +52,9 @@ Preserve exact identifiers, equations, units, qualifications, and uncertainty.
 
 Automated prose checks do not establish factual correctness, scientific validity,
 accessibility in use, or reader success.
+
+Do not use lexical rules for words such as “production”, “recommended”, “standard”,
+“this”, or “below” as substitutes for contextual review.
 
 ## Maintenance
 

@@ -45,6 +45,12 @@ Do not automatically rewrite scientific qualifications, uncertainty, causality,
 equations, identifiers, or code. Run Vale on changed prose first; use scheduled
 whole-tree reports to measure older debt.
 
+Do not add generic rules for status words such as “production”, “recommended”, or
+“standard”, or for relative words such as “this”, “matched”, and “below”. These terms
+often have legitimate technical uses, and a lexical match cannot establish whether a
+claim has public authority, a referent is clear, or content belongs on the page. Review
+those questions semantically in the relevant documentation skill.
+
 This repository's [`.vale.ini`](../.vale.ini) and
 [`DocsDoctor` rules](../.vale/styles/DocsDoctor) are deliberately small. They test
 project spelling and prompt review of a few dismissive expressions. They are examples,

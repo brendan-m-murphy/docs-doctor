@@ -255,6 +255,20 @@ Check observable behaviour and semantic invariants, not merely expected headings
 phrasing. Report what was checked, what could not be checked, and who must review
 high-risk claims.
 
+### 5. Check cold-reader context and placement
+
+For substantial changed content, reason from the page, its public links, and repository
+evidence rather than private prototypes or change discussion. Introduce comparisons,
+make relative references locally clear, and distinguish public API support, built-in
+availability, recommendation, operational adoption, compatibility, and experimental
+maturity.
+
+Test placement against the page title and introduction, reader search intent, canonical
+home, neighbouring level of abstraction, and support status implied by the location.
+This is an agent or human semantic check, not a Vale vocabulary rule. Public docstrings
+need to be intelligible beside their signature, annotations, containing object, and
+explicit links; they do not need to reproduce tutorials or general project context.
+
 ## Small user-needs map
 
 Use a needs map for a broad plan or audit only. Suggested fields:
@@ -316,6 +330,7 @@ An optional adapter should declare:
 - sources of truth by claim type;
 - validation commands and expensive-check schedule;
 - supported versions and deprecation policy;
+- support and maturity vocabulary, its dimensions, and authoritative source;
 - terminology, locale, and selected language profile;
 - docstring policy path, selected dialect, public-export declarations, generated API
   behaviour, and deterministic docstring checks;

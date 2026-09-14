@@ -54,6 +54,20 @@ Give each page or clearly marked section one dominant purpose. A small page set 
 multiple modes when the reader needs genuinely differ; connect them with purposeful
 links. Do not manufacture all four modes or split useful content merely for symmetry.
 
+Before finalising a new section or changed content that introduces a comparison,
+alternative, limitation, or status claim, read it as someone who has only the current
+page, its public links, and repository evidence. Do not rely on issue or pull-request
+discussion to supply the missing context.
+Make pronouns and relative phrases locally unambiguous. Verify that status labels state
+what kind of status they mean—such as supported API, built-in implementation,
+recommended workflow, operational adoption, compatibility, or experiment—and that the
+repository publicly supports the claim.
+
+Check each new or substantially changed section against the page's title and
+introductory promise, likely reader search intent, canonical home, neighbouring level of
+abstraction, and maturity implied by its location. Related pages can link to the
+canonical explanation or procedure without becoming a second home for it.
+
 ## Write precisely and safely
 
 Prefer direct, literal language, descriptive headings, meaningful link text, and one

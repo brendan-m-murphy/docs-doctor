@@ -22,11 +22,19 @@ jobs:
             | tar -xz -C "$RUNNER_TEMP" vale
           echo "$RUNNER_TEMP" >> "$GITHUB_PATH"
       - name: Test repository helpers and structure
-        run: python -m unittest discover -s tests -p "test_*.py"
+        run: |
+          python -m unittest discover -s tests -p "test_*.py"
+          PYTHONPATH=evals/fixtures/builtin-runner-project/src \
+            python -m unittest discover \
+              -s evals/fixtures/builtin-runner-project/tests -p "test_*.py"
       - name: Check Python
         run: |
-          ruff check scripts tests/test_adopt.py tests/test_repository.py
-          ruff format --check scripts tests/test_adopt.py tests/test_repository.py
+          ruff check scripts tests/test_adopt.py tests/test_repository.py \
+            evals/fixtures/builtin-runner-project/src \
+            evals/fixtures/builtin-runner-project/tests
+          ruff format --check scripts tests/test_adopt.py tests/test_repository.py \
+            evals/fixtures/builtin-runner-project/src \
+            evals/fixtures/builtin-runner-project/tests
       - name: Check maintained prose
         run: vale README.md docs .agents/skills evals templates tests/vale/pass
       - name: Verify Ruff diagnostic fixture

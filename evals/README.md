@@ -18,9 +18,22 @@ authorizes an isolated fixture edit.
 
 Initial cases cover repository assessment, docstring contract review, documentation
 impact from a CLI/configuration change, bounded how-to authoring in an isolated copy,
-and preservation of an established non-Google docstring dialect.
+preservation of an established non-Google docstring dialect, and a four-skill regression
+for reader-context leakage and incorrect canonical placement.
 
-The first recorded run is [the 2026-09-14 forward-test
-report](results/2026-09-14-initial-forward-tests.md). Keep raw generated builds and
-disposable clones outside the repository; record only evidence, outcomes, and
-instruction changes justified by failures.
+Recorded runs:
+
+- [Initial forward tests](results/2026-09-14-initial-forward-tests.md)
+- [Cold-reader and placement regression](results/2026-09-14-cold-reader-placement.md)
+
+Keep raw generated builds and disposable clones outside the repository; record only
+evidence, outcomes, and instruction changes justified by failures.
+
+The built-in runner fixture keeps its public behavior internally consistent with a
+small standard-library test:
+
+```bash
+PYTHONPATH=evals/fixtures/builtin-runner-project/src \
+  python3 -m unittest discover \
+    -s evals/fixtures/builtin-runner-project/tests -p 'test_*.py'
+```

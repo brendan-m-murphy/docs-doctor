@@ -1,0 +1,7 @@
+interface:
+  display_name: "Documentation Impact Review"
+  short_description: "Keep documentation aligned with software changes"
+  default_prompt: "Use $documentation-impact-review to assess this change and update affected documentation if authorized."
+
+policy:
+  allow_implicit_invocation: true

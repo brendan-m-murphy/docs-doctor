@@ -1,0 +1,7 @@
+interface:
+  display_name: "Documentation Authoring"
+  short_description: "Write bounded, evidence-led technical docs"
+  default_prompt: "Use $documentation-authoring to create or revise this bounded documentation and validate it against the repository."
+
+policy:
+  allow_implicit_invocation: true

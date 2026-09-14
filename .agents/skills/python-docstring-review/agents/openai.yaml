@@ -1,0 +1,7 @@
+interface:
+  display_name: "Python Docstring Review"
+  short_description: "Review changed Python docstring contracts"
+  default_prompt: "Use $python-docstring-review to review the affected Python docstrings and make minimal fixes if authorized."
+
+policy:
+  allow_implicit_invocation: true

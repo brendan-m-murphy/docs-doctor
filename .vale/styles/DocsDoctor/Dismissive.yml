@@ -1,0 +1,6 @@
+extends: existence
+message: "Check whether '%s' dismisses a reader's difficulty."
+level: suggestion
+ignorecase: true
+tokens:
+  - '\b(?:easy|easily|obvious|obviously|simply|magical|magically)\b'

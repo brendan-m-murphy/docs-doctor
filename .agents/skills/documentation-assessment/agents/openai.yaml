@@ -1,0 +1,7 @@
+interface:
+  display_name: "Documentation Assessment"
+  short_description: "Audit technical documentation without editing"
+  default_prompt: "Use $documentation-assessment to assess these docs and prioritise evidence-backed improvements without changing files."
+
+policy:
+  allow_implicit_invocation: true

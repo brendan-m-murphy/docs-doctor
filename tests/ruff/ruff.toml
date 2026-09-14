@@ -1,0 +1,7 @@
+line-length = 100
+
+[lint]
+select = ["D100", "D101", "D102", "D103", "D104", "D417"]
+
+[lint.pydocstyle]
+convention = "google"

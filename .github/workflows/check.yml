@@ -1,0 +1,39 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install checks
+        run: |
+          python -m pip install ruff==0.16.0
+          curl -fsSL https://github.com/vale-cli/vale/releases/download/v3.21.0/vale_3.21.0_Linux_64-bit.tar.gz \
+            | tar -xz -C "$RUNNER_TEMP" vale
+          echo "$RUNNER_TEMP" >> "$GITHUB_PATH"
+      - name: Test repository helpers and structure
+        run: python -m unittest discover -s tests -p "test_*.py"
+      - name: Check Python
+        run: |
+          ruff check scripts tests/test_adopt.py tests/test_repository.py
+          ruff format --check scripts tests/test_adopt.py tests/test_repository.py
+      - name: Check maintained prose
+        run: vale README.md docs .agents/skills evals templates tests/vale/pass
+      - name: Verify Ruff diagnostic fixture
+        run: |
+          ruff check --config tests/ruff/ruff.toml --output-format json tests/ruff/fail > "$RUNNER_TEMP/ruff.json" || true
+          python -c 'import json, os; p=os.environ["RUNNER_TEMP"]+"/ruff.json"; d=json.load(open(p)); assert {x["code"] for x in d} == {"D100", "D101", "D102", "D103", "D104", "D417"}'
+      - name: Verify Vale diagnostic fixtures
+        run: |
+          vale --output=JSON --no-exit tests/vale/fail > "$RUNNER_TEMP/vale.json"
+          python -c 'import json, os; p=os.environ["RUNNER_TEMP"]+"/vale.json"; d=json.load(open(p)); assert len(d) == 2; assert all(len(v) == 5 for v in d.values()); assert {x["Check"] for v in d.values() for x in v} == {"DocsDoctor.Dismissive", "DocsDoctor.Terms"}'

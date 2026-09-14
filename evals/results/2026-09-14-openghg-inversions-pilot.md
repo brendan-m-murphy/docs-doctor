@@ -19,9 +19,10 @@ verified findings remain current. Open pull requests change the coordination pic
 - [PR 649](https://github.com/openghg/openghg_inversions/pull/649) owns release
   automation and maintainer guidance.
 
-The pilot must not duplicate those changes. The smallest independent correction was
-the invalid heading hierarchy in the concrete-model explanation. It is submitted as
-[PR 677](https://github.com/openghg/openghg_inversions/pull/677).
+The pilot did not duplicate those changes. The smallest independent correction was the
+invalid heading hierarchy in the concrete-model explanation. It was reviewed and
+merged in [PR 677](https://github.com/openghg/openghg_inversions/pull/677) as
+`df581dcc`.
 
 ## Current needs map
 
@@ -29,7 +30,7 @@ the invalid heading hierarchy in the concrete-model explanation. It is submitted
 | --- | --- | --- | --- | --- | --- | --- |
 | First standard or multisector RHIME run | Scientist new to modern RHIME | Reach a small successful inversion from supported inputs | Tutorial | The base branch lacks a short start-to-success route; PR 626 adds executable tutorials and fixtures | Exercise recorded tutorial commands and expected outputs | High until PR 626 lands |
 | Likelihood customisation | Model developer who understands the standard runner | Choose a supported seam and change one likelihood safely | How-to | `customising_rhime.rst` provides the main seam; PRs 673 and 674 add specialised routes but still have context and placement gaps | Cold-reader check, focused numerical tests, domain review | High within active PRs |
-| Concrete RHIME graph | Scientific reviewer or model developer | Understand equations, graph names, assumptions, and alternatives | Explanation | `concrete_rhime_model.rst` is the canonical detailed explanation; two subsection headings skip a level | Targeted Sphinx build and rendered heading inspection | Medium; PR 677 open |
+| Concrete RHIME graph | Scientific reviewer or model developer | Understand equations, graph names, assumptions, and alternatives | Explanation | `concrete_rhime_model.rst` is the canonical detailed explanation; its invalid subsection hierarchy was fixed in PR 677 | Targeted Sphinx build and rendered heading inspection | Immediate defect resolved |
 | Python interfaces | Developer using or extending public objects | Find accurate signatures and caller contracts | Reference | Generated stubs expose a broad API, while the strict build reports docstring parse errors and many unresolved targets | API regeneration and strict Sphinx build | High maintenance debt |
 | Documentation change workflow | Contributor changing code or docs | Detect broken reference and authored pages before merge | How-to/maintenance | Docs deploy runs on pushes to `devel`, not pull requests; the strict target currently fails on pre-existing warnings | Pull-request docs job with a measured baseline | High |
 | RHIME architecture changes | Maintainer or scientific developer | Preserve explicit scientific order and execution boundaries | Explanation/reference | Development guidance and active roadmap are strong and are named in `AGENTS.md` | Focused tests plus scientific review | Covered; preserve and link |
@@ -64,9 +65,14 @@ A strict Sphinx baseline in an isolated checkout reproduced the two level-skip e
 in `docs/usage/concrete_rhime_model.rst`. It also reported two unrelated docstring parse
 errors and hundreds of pre-existing unresolved-reference warnings. After changing only
 the two subsection underline styles, a targeted Sphinx build succeeded and rendered
-both as third-level HTML headings. The broader warning backlog remains outside PR 677.
+both as third-level HTML headings. All pull-request checks passed, and maintainer review
+accepted the repair without changes. The broader warning backlog and missing
+pull-request documentation validation are tracked in
+[issue 679](https://github.com/openghg/openghg_inversions/issues/679), coordinated with
+the incremental-preview work in
+[issue 629](https://github.com/openghg/openghg_inversions/issues/629).
 
 No skill change is justified by this pass: the current cold-reader, status-dimension,
-and canonical-placement checks identified the observed problems. The pilot remains open
-until the bounded pull request receives maintainer review and the remaining work is
-tracked or explicitly deferred.
+and canonical-placement checks identified the observed problems. The bounded repair has
+been reviewed, and remaining work is either owned by active pull requests or tracked in
+an upstream issue, so the pilot is complete.

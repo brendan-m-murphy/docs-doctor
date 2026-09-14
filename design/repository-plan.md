@@ -464,9 +464,9 @@ avoid adding a universal rule for every example.
 
 - A read-only broad audit of `openghg_inversions` and an initial `openghg-run`
   assessment are complete.
-- The first bounded `openghg-run` documentation cleanup is submitted in
-  [openghg-run PR 68](https://github.com/openghg/openghg-run/pull/68); record maintainer
-  feedback as pilot evidence.
+- The first bounded `openghg-run` documentation cleanup was merged in
+  [openghg-run PR 68](https://github.com/openghg/openghg-run/pull/68) after review found
+  no issues.
 - Pilot assessment-only docstring review on OpenGHG pull requests using repository
   policy.
 - Complete human-reviewed tutorial, how-to, reference, explanation, and change-impact

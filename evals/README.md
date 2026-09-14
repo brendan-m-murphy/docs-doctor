@@ -25,6 +25,7 @@ Recorded runs:
 
 - [Initial forward tests](results/2026-09-14-initial-forward-tests.md)
 - [Cold-reader and placement regression](results/2026-09-14-cold-reader-placement.md)
+- [Public installation and update test](results/2026-09-14-public-installation-update.md)
 
 Keep raw generated builds and disposable clones outside the repository; record only
 evidence, outcomes, and instruction changes justified by failures.

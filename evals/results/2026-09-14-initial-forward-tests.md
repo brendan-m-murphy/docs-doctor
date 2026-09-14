@@ -75,6 +75,24 @@ A useful cleanup sequence is:
 4. adopt a short repository docstring policy and fix the reviewed public contracts; and
 5. then enable a measured subset of stable Ruff docstring rules.
 
+### `openghg-run` pilot follow-through
+
+The bounded development-setup revision became
+[openghg-run PR 68](https://github.com/openghg/openghg-run/pull/68). The submitted change
+also corrected the incomplete development command in the README so a contributor could
+reach the documented test and documentation tools. Local validation repeated the lock,
+Ruff, ty, 269-test, CLI-help, and strict-Sphinx checks; all pull-request checks passed.
+Maintainer review found no issues, and the change was squash-merged as `bcbbd185`.
+
+No false positive or missing skill instruction emerged from that review, so the skill
+was not changed. The initial impact and docstring findings remained valid but outside
+the bounded pull request. They are tracked upstream as:
+
+- [openghg-run issue 70](https://github.com/openghg/openghg-run/issues/70), to decide
+  and document the `--config-set` variant policy; and
+- [openghg-run issue 71](https://github.com/openghg/openghg-run/issues/71), to adopt a
+  docstring policy and improve case API contracts.
+
 ## Test boundaries
 
 The live `openghg-run` repository retained its pre-existing untracked `.codex/`

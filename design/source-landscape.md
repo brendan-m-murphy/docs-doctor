@@ -1,6 +1,6 @@
 # Source landscape and adoption policy
 
-Status: planning research, reviewed 2026-09-14.
+Status: research basis for the implemented suite, reviewed 2026-09-14.
 
 ## Recommendation
 
@@ -17,13 +17,13 @@ not as automatic rules.
 | Conditional profile | Domain rules that would distract or conflict outside their scope | Mathematical and scientific exposition; controlled language and localisation; publication and typesetting |
 | Design rationale/background | Sources for shaping and reviewing the core, not material loaded for every task | Diátaxis; current developer, user-research, accessibility, and maintenance guidance; Halmos; Knuth, Larrabee, and Roberts; Higham; early Strunk; publisher manuals |
 
-This keeps the future skill small and makes conflicts visible. For example, Google and
+This keeps the suite small and makes conflicts visible. For example, Google and
 numpydoc docstrings are alternative project dialects, not two sets of requirements to
 apply simultaneously.
 
 ## Source adoption policy
 
-The future skill should apply these rules before consulting an external style guide:
+The suite applies these rules before consulting an external style guide:
 
 1. Follow the user's task, applicable repository policy, and explicitly adopted
    project conventions.

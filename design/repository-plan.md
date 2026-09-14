@@ -1,7 +1,8 @@
 # Repository and skill plan
 
-Status: initial four-skill suite, narrow Ruff/Vale fixtures, first forward evaluations,
-and a preview-first adopter bootstrap implemented.
+Status: four-skill suite published and installed for personal use; narrow Ruff/Vale
+fixtures, preview-first adopter bootstrap, initial forward evaluations, and independent
+cold-reader regressions complete. Adopter pilots are in progress.
 
 ## Objective
 
@@ -428,43 +429,50 @@ Run forward evaluations in isolated temporary repositories with an independent a
 Compare against a no-skill baseline. Revise instructions only for observed failures;
 avoid adding a universal rule for every example.
 
-## Staged implementation
+## Progress and next stages
 
-### Phase 0: confirm decisions
+### Phase 0: confirm decisions — complete
 
-- Choose the initial domain: scientific Python first, or general technical docs with a
-  scientific profile.
-- Confirm the working skill name, locale default, and first adopter repository.
-- Decide whether v0 is local/repository-scoped or intended for plugin distribution.
+- The initial scope is general technical documentation with a scientific-Python
+  profile and OpenGHG as the first adopter family.
+- The four skill names and their boundaries are fixed for the pilot.
+- Version 0 is distributed as repository and personal skills. Plugin packaging is
+  deferred until the pilot shows that the boundary and update workflow are stable.
 
-### Phase 1: instruction-only skills
+### Phase 1: instruction-first skills — complete
 
-- Create the four small entry files without speculative references or scripts.
-- Let `python-docstring-review` discover a canonical adopter policy when available and
-  use its conservative fallback when none exists.
-- Add an output template only when a case shows that free-form output is inconsistent
-  or hard to review.
-- Validate structure and trigger wording; do not add scripts.
+- The four focused skills are implemented and structurally validated.
+- `python-docstring-review` discovers adopter policy and otherwise uses a conservative,
+  policy-neutral public-contract fallback.
+- Shared references and small output contracts were added only where evaluation showed
+  a recurring need.
+- `scripts/adopt.py` provides a preview-first repository bootstrap without overwriting
+  conflicting files.
 
-### Phase 2: behavioural evaluation
+### Phase 2: behavioural evaluation — in progress
 
-- Create representative fixtures and the critical-failure rubric.
-- Test explicit and implicit invocation, all four modes, read-only boundaries, and the
-  scientific and language profiles.
-- Compare selected prose cases with no skill and with `agent-style`; include cases where
-  rejecting a mechanical or house-style suggestion is the correct outcome.
-- Simplify or split only in response to observed failures.
+- Representative fixtures, a critical-failure rubric, initial forward tests, and
+  independent cold-reader regression tests are complete.
+- Read-only boundaries, the numpydoc conflict case, Ruff and Vale fixtures, generated
+  reference placement, and context restoration have been exercised.
+- Remaining coverage includes implicit and negative activation, tutorial/reference/
+  explanation cases, controlled-language and scientific profiles, and controlled
+  comparison with no-skill and `agent-style` baselines.
+- Instructions change only in response to observed failures.
 
-### Phase 3: pilot
+### Phase 3: adopter pilots — in progress
 
-- Pilot docstring review assessment-only on OpenGHG pull requests using its repository
+- A read-only broad audit of `openghg_inversions` and an initial `openghg-run`
+  assessment are complete.
+- The first bounded `openghg-run` documentation cleanup is submitted in
+  [openghg-run PR 68](https://github.com/openghg/openghg-run/pull/68); record maintainer
+  feedback as pilot evidence.
+- Pilot assessment-only docstring review on OpenGHG pull requests using repository
   policy.
-- Run a read-only broad documentation audit on `openghg_inversions`.
-- Select one tutorial, how-to, reference, explanation, and change-impact scenario for
-  a human-reviewed trial.
-- Record missing context and false positives; update the adapter and guidance.
+- Complete human-reviewed tutorial, how-to, reference, explanation, and change-impact
+  trials; record missing context and false positives.
 
-### Phase 4: proportionate integration
+### Phase 4: proportionate integration — not started
 
 - Add pull-request prompts, previews, ownership, and validation commands in the adopter
   repository.
@@ -479,18 +487,24 @@ avoid adding a universal rule for every example.
 - Package as a plugin only after the skill's boundary and behaviour are stable and it
   is ready for distribution beyond the development or pilot repository.
 
-## Decisions still needed
+## Current operating decisions
 
-1. Should the first adopter integrations live in each repository or be installed from
-   this suite during the pilot?
-2. Is British English the default, or must locale always come from the adapter?
-3. For OpenGHG's Google docstring policy, what are the final choices for module
+- Skills may be installed personally for explicit use or copied into an adopter
+  repository with the preview-first bootstrap. Repository policy and tooling remain
+  local to each adopter.
+- Locale is discovered from adopter policy and existing documentation. This repository
+  uses British English; the suite does not impose it elsewhere.
+- Broad audits normally return a small needs map when it materially clarifies journeys,
+  gaps, or priorities; bounded reviews may omit it.
+- Documentation-impact review is explicitly invoked by default. Adopters may make its
+  three-way outcome part of their definition of done.
+- Repository and personal skills are the version 0 distribution targets. A plugin is a
+  later option, not a prerequisite for adoption.
+
+## Open decisions
+
+1. For OpenGHG's Google docstring policy, what are the final choices for module
    coverage, simple private and test docstrings, constructor placement, inherited
    methods, and relevant exceptions?
-4. Which additional documentation stack, beyond Sphinx with reStructuredText or MyST,
+2. Which additional documentation stack, beyond Sphinx with reStructuredText or MyST,
    should receive a tested adapter first?
-5. Should the needs map be expected for broad audits or entirely optional?
-6. Should documentation-impact review require explicit invocation in v0, or be added to
-   adopter repositories' definition of done?
-7. Is the initial distribution target a repository skill, a personal skill, or an
-   installable plugin?

@@ -59,10 +59,12 @@ personal Codex installation from GitHub, and updates.
 
 ## Development status
 
-The four skills are implemented and structurally validated. Behavioural evaluation
-uses `openghg_inversions` and `openghg-run` as read-only targets so their existing
-working trees are not contaminated. Evaluation prompts and results live under
-[`evals`](evals/README.md).
+The four skills are implemented, published, and structurally validated. Behavioural
+evaluation uses isolated copies of `openghg_inversions` and `openghg-run` so their
+existing working trees are not contaminated. Initial evaluations and independent
+cold-reader regressions are complete; adopter pilots and remaining work are tracked in
+[GitHub issues](https://github.com/brendan-m-murphy/docs-doctor/issues). Evaluation
+prompts and results live under [`evals`](evals/README.md).
 
 Vale checks this repository's own terminology and a small set of reader-language
 prompts. Those rules are local examples, not a style package to impose on adopters.

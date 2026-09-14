@@ -1,7 +1,8 @@
 # Initial forward-test results
 
 - Date: 2026-09-14
-- Suite state: uncommitted four-skill working tree
+- Suite state at evaluation: pre-publication four-skill working tree, subsequently
+  published in commit `dc8d4b6`
 - Targets: refreshed `openghg_inversions` `devel` at `2d05ad9ecc92` and
   `openghg-run` at
   `3944d8abe489`

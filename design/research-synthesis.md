@@ -1,6 +1,6 @@
 # Research synthesis
 
-Status: planning research, reviewed 2026-09-14.
+Status: design rationale for the implemented suite, reviewed 2026-09-14.
 
 ## Conclusions
 
@@ -127,7 +127,7 @@ This supports the current design, with two qualifications:
   to split every page containing a small amount of adjacent material.
 
 Its Sphinx, reStructuredText, tox, and Read the Docs path is a useful worked example of
-one Python documentation stack, not a technology mandate for the future skill.
+one Python documentation stack, not a technology mandate for the suite.
 
 ### What section 8.4 contributes
 
@@ -247,7 +247,7 @@ It should not be mandatory across this project:
   is available free of charge but restricts redistribution, so this repository should
   link to it rather than vendor or reproduce it.
 
-The future skill should offer profiles instead:
+The suite offers profiles instead:
 
 | Profile | Use |
 | --- | --- |

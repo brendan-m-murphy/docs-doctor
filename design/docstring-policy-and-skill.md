@@ -1,7 +1,8 @@
 # Docstring policy and review skill
 
 Status: the separate skill and local Ruff fixtures are implemented. The proposed
-OpenGHG policy and adopter-repository configuration have not been applied.
+OpenGHG policy and first Ruff ratchet are under review in
+[OpenGHG PR 1738](https://github.com/openghg/openghg/pull/1738).
 
 ## Decision
 
@@ -109,7 +110,7 @@ agent, and tool review.
 | Public method | The same contract as a public function, plus state read or changed and any lifecycle preconditions. Do not repeat an inherited contract unless the override changes it. |
 | Class | Responsibility, important invariants, lifecycle or state, constructor parameter meaning, and public attributes where useful. Choose the class docstring as the single canonical home for constructor documentation. |
 | Property | Meaning of the exposed value, including units, shape, mutability, caching, or cost where relevant. |
-| Complicated private callable or class | The non-obvious contract, invariant, algorithmic reason, or failure condition needed for safe maintenance. |
+| Complicated private callable or class | The contract, invariant, algorithmic reason, or failure condition needed for safe maintenance. |
 | Simple private helper or test | Follow the explicit OpenGHG choice in PR 1730: one meaningful sentence describing behaviour or scenario. Revisit this rule if review shows repeated name-restatement noise. |
 
 For scientific and data APIs, “contract” can include units, dimensions, coordinates,
@@ -264,15 +265,34 @@ Before relying on the skill, test at least these cases:
 Evaluate correct non-activation as well as correct findings. Compare the skill with
 Ruff-only review so its added semantic value is visible.
 
-## Rollout
+## OpenGHG baseline and rollout
 
-1. Agree the unresolved policy details, especially modules, simple private/test
-   docstrings, constructor placement, inherited methods, and exception thresholds.
-2. Add the concise OpenGHG policy page and replace duplicated guidance with links.
-3. Create and test the instruction-only review skill.
-4. Pilot it assessment-only on a few pull requests, including PR 1730's stack.
-5. Enable a minimal set of stable Ruff rules for new or changed scope.
-6. Consider preview Ruff `DOC` rules and Vale terminology checks only after collecting
+Ruff 0.16.2 on OpenGHG `devel` at `4223b11` found no missing docstrings for
+production public classes, methods, or functions (`D101`–`D103`). The same rules found
+346 existing omissions in tests. Broader candidates are not zero-debt: production has
+one `D100`, 30 `D104`, 98 `D417`, and six `D419` findings.
+
+PR 1738 therefore selects only `D101`, `D102`, and `D103`, uses Ruff's Google
+convention, and exempts tests from those mechanical presence checks. The human policy
+still requires meaningful descriptions for new and materially changed tests. Module,
+package, empty-docstring, and parameter-completeness rules remain review concerns until
+their baselines are resolved. This is a ratchet, not a claim that existing docstrings
+are semantically complete.
+
+The full strict Sphinx build reads the new policy page but fails on the pre-existing
+documentation baseline, including malformed existing docstrings, missing and duplicate
+references, inconsistent headings, and notebook execution restrictions. Standalone
+strict docutils validation of the policy page passes.
+
+Rollout sequence:
+
+1. Review and merge the concise OpenGHG policy page and zero-debt Ruff ratchet in
+   PR 1738.
+2. Link PR 1730 or its replacement to the canonical policy after its stack is resolved.
+3. Pilot the instruction-only review skill assessment-only on a few pull requests.
+4. Resolve module, package, empty-docstring, and parameter-completeness debt in bounded
+   changes before enabling more rules.
+5. Consider preview Ruff `DOC` rules and Vale terminology checks only after collecting
    false positives and pinning the intended behaviour.
 
 This order makes the written policy authoritative before tools begin enforcing a
